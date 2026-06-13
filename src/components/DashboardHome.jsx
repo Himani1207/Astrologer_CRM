@@ -805,12 +805,48 @@ const DashboardHome = ({
 
         @media (max-width: 600px) {
           .stats-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+          }
+          .stat-card {
+            padding: 1rem;
+          }
+          .stat-value {
+            font-size: 1.4rem;
+          }
+          .top-astrologer-name {
+            font-size: 1.15rem !important;
           }
           .welcome-banner {
             flex-direction: column;
             align-items: flex-start;
+            gap: 1.25rem;
+            padding: 1rem 1.25rem;
+          }
+          .banner-right-wrapper {
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
             gap: 1rem;
+          }
+          .quick-actions-inline {
+            width: 100%;
+            gap: 0.5rem;
+          }
+          .quick-action-btn-sm {
+            flex: 1;
+            min-width: 130px;
+            justify-content: center;
+          }
+          .banner-date {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .stats-grid {
+            grid-template-columns: 1fr;
           }
         }
       `}} />

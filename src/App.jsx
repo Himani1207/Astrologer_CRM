@@ -572,6 +572,7 @@ function App() {
             setMobileSidebarOpen(false);
           }}
           onLogout={handleLogout}
+          open={mobileSidebarOpen}
         />
       </div>
 

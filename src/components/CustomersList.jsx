@@ -465,6 +465,36 @@ const CustomersList = ({ customers, astrologers, onAddCustomer, onEditCustomer, 
           color: var(--text-secondary);
           line-height: 1.4;
         }
+
+        @media (max-width: 640px) {
+          .section-title-bar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+          }
+          .section-title-bar button {
+            width: 100%;
+          }
+          .detail-row {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          .modal-customer-header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.75rem;
+          }
+          .search-field {
+            max-width: none;
+            width: 100%;
+          }
+          .patron-tier-box {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+        }
       `}} />
     </div>
   );

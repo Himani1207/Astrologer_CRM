@@ -670,6 +670,46 @@ const AstrologersList = ({
           color: var(--primary);
           font-weight: 600;
         }
+
+        @media (max-width: 640px) {
+          .section-title-bar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+          }
+          .section-title-bar button {
+            width: 100%;
+          }
+          .tab-filters {
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            scrollbar-width: none;
+            padding-bottom: 2px;
+          }
+          .tab-filters::-webkit-scrollbar {
+            display: none;
+          }
+          .filter-tab-btn {
+            flex-shrink: 0;
+          }
+          .detail-row {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          .modal-customer-header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.75rem;
+          }
+          .filters-container {
+            gap: 0.75rem;
+          }
+          .search-field {
+            max-width: none;
+            width: 100%;
+          }
+        }
       `}} />
     </div>
   );

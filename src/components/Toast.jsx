@@ -102,6 +102,16 @@ const Toast = ({ toasts, removeToast }) => {
           color: var(--text-primary);
           background-color: var(--bg-main);
         }
+
+        @media (max-width: 480px) {
+          .toast-container {
+            top: 1rem;
+            right: 1rem;
+            left: 1rem;
+            width: auto;
+            max-width: none;
+          }
+        }
       `}} />
     </div>
   );

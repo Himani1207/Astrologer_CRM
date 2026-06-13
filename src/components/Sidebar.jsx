@@ -10,7 +10,7 @@ import {
   Compass
 } from 'lucide-react';
 
-const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
+const Sidebar = ({ activeTab, setActiveTab, onLogout, open }) => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'astrologers', label: 'Astrologers', icon: UserRound },
@@ -20,7 +20,7 @@ const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
   ];
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${open ? 'open' : ''}`}>
       <div className="sidebar-logo">
         <Compass className="logo-icon animate-spin-slow" size={28} />
         <div>
@@ -55,18 +55,13 @@ const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
 
       <style dangerouslySetInnerHTML={{__html: `
         .sidebar {
-          width: var(--sidebar-width);
-          height: 100vh;
-          position: fixed;
-          left: 0;
-          top: 0;
+          width: 100%;
+          height: 100%;
           background: linear-gradient(180deg, #2D1B69 0%, #130D2A 100%);
           color: var(--text-light);
           display: flex;
           flex-direction: column;
           border-right: 1px solid rgba(255, 255, 255, 0.05);
-          z-index: 100;
-          transition: transform 0.3s ease;
         }
 
         .sidebar-logo {
@@ -175,14 +170,7 @@ const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
           color: #FF859B;
         }
 
-        @media (max-width: 1024px) {
-          .sidebar {
-            transform: translateX(-100%);
-          }
-          .sidebar.open {
-            transform: translateX(0);
-          }
-        }
+        /* Sidebar responsive overrides handled by parent wrapper */
       `}} />
     </aside>
   );

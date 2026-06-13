@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -43,6 +43,15 @@ ChartJS.register(
 );
 
 const AnalyticsView = ({ consultations, astrologers, stats }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   // Chart 1: Monthly Consultations
   const lineChartData = {
@@ -199,7 +208,7 @@ const AnalyticsView = ({ consultations, astrologers, stats }) => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'right',
+        position: isMobile ? 'bottom' : 'right',
         labels: {
           font: { family: 'Outfit', size: 11, weight: '500' },
           color: '#475569',
@@ -445,6 +454,28 @@ const AnalyticsView = ({ consultations, astrologers, stats }) => {
           .charts-analytics-layout {
             grid-template-columns: 1fr;
           }
+        }
+
+        @media (max-width: 640px) {
+          .section-title-bar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+          }
+          .kpi-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+          }
+          .kpi-card {
+            padding: 0.85rem;
+            gap: 0.75rem;
+          }
+          .kpi-val {
+            font-size: 1.15rem;
+          }
+        }
+
+        @media (max-width: 400px) {
           .kpi-grid {
             grid-template-columns: 1fr;
           }

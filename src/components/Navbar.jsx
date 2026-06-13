@@ -344,11 +344,31 @@ const Navbar = ({ adminName, searchQuery, onSearchChange, toggleMobileSidebar, n
           .profile-info {
             display: none;
           }
+          .navbar-right {
+            gap: 0.75rem;
+          }
+          .notification-dropdown {
+            width: 280px;
+            right: -60px;
+          }
           .search-input {
-            width: 150px;
+            width: 130px;
           }
           .search-input:focus {
-            width: 220px;
+            width: 160px;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .search-input {
+            width: 100px;
+          }
+          .search-input:focus {
+            width: 120px;
+          }
+          .notification-dropdown {
+            width: 260px;
+            right: -80px;
           }
         }
       `}} />

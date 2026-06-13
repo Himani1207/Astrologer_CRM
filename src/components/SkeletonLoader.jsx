@@ -103,6 +103,13 @@ const styles = `
 
   @media (max-width: 600px) {
     .stats-skeleton-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .stats-skeleton-grid {
       grid-template-columns: 1fr;
     }
   }

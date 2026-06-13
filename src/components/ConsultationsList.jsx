@@ -396,12 +396,22 @@ const ConsultationsList = ({
         }
 
         .status-counter-bar {
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
+          display: flex;
+          overflow-x: auto;
+          white-space: nowrap;
           gap: 1rem;
+          scrollbar-width: none;
+          padding-bottom: 2px;
+        }
+
+        .status-counter-bar::-webkit-scrollbar {
+          display: none;
         }
 
         .counter-tab {
+          flex: 1;
+          flex-shrink: 0;
+          min-width: 110px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -542,15 +552,18 @@ const ConsultationsList = ({
           color: var(--text-primary);
         }
 
-        @media (max-width: 900px) {
-          .status-counter-bar {
-            grid-template-columns: repeat(3, 1fr);
+        @media (max-width: 640px) {
+          .section-title-bar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
           }
-        }
-
-        @media (max-width: 600px) {
-          .status-counter-bar {
-            grid-template-columns: repeat(2, 1fr);
+          .section-title-bar button {
+            width: 100%;
+          }
+          .search-field {
+            max-width: none;
+            width: 100%;
           }
         }
       `,
