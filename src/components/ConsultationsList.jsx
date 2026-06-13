@@ -565,6 +565,20 @@ const ConsultationsList = ({
             max-width: none;
             width: 100%;
           }
+          .status-counter-bar {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            overflow-x: visible;
+            white-space: normal;
+          }
+          .counter-tab {
+            min-width: 0;
+            padding: 0.6rem 0.75rem;
+          }
+          .counter-tab.all {
+            grid-column: span 2;
+          }
         }
       `,
         }}

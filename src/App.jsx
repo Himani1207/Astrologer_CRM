@@ -594,8 +594,12 @@ function App() {
 
       <style dangerouslySetInnerHTML={{__html: `
         .sidebar-wrapper {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
           width: 280px;
-          flex-shrink: 0;
+          z-index: 95;
           height: 100vh;
         }
 

@@ -41,7 +41,7 @@ const Navbar = ({ adminName, searchQuery, onSearchChange, toggleMobileSidebar, n
           </button>
 
           {showNotifications && (
-            <div className="notification-dropdown glass-panel">
+            <div className="notification-dropdown">
               <div className="dropdown-header">
                 <h3>Notifications</h3>
                 {unreadCount > 0 && (
@@ -205,6 +205,8 @@ const Navbar = ({ adminName, searchQuery, onSearchChange, toggleMobileSidebar, n
           overflow: hidden;
           box-shadow: var(--shadow-xl);
           z-index: 100;
+          background-color: var(--bg-card);
+          border: 1px solid var(--border-color);
           animation: fadeIn 0.2s ease forwards;
         }
 

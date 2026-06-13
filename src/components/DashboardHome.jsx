@@ -477,6 +477,15 @@ const DashboardHome = ({
         .dashboard-left-col {
           display: flex;
           flex-direction: column;
+          min-width: 0;
+          width: 100%;
+        }
+
+        .dashboard-right-col {
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+          width: 100%;
         }
 
         .section-header {
